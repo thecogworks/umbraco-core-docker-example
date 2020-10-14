@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  umbraco-db:
+    container_name: umbraco-db-mssql-2017
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    env_file: ./configs/ms.sql.env
+    networks:
+      - umbraco-network
+    volumes:
+      - umbraco.db:/var/opt/mssql/data
+    restart: always
+    ports:
+      - '3930:1433'
+      - '3931:1434'
+  
+  umbraco-headless-netcore:
+    links:
+      - umbraco-db:umbraco-db
+    depends_on:
+      - umbraco-db
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - umbraco-network
+
+volumes:
+  umbraco.db:
+
+networks:
+  umbraco-network: null
