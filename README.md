@@ -1,1 +1,1 @@
-umbraco-net-core-headless
+umbraco-net-core-example
