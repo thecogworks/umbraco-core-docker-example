@@ -14,7 +14,7 @@ services:
       - '3930:1433'
       - '3931:1434'
   
-  umbraco-headless-netcore:
+  umbraco-netcore:
     links:
       - umbraco-db:umbraco-db
     depends_on:
