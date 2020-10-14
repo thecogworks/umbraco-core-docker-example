@@ -5,7 +5,14 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoNetCoreDockerExample.Web", "src\UmbracoNetCoreDockerExample.Web\UmbracoNetCoreDockerExample.Web.csproj", "{4F19CDD1-A02E-4B6D-AA7C-C0661CC35AA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoNetCoreDockerExample.Core", "src\UmbracoNetCoreDockerExample.Core\UmbracoNetCoreDockerExample.Core.csproj", "{782C7B02-7227-47ED-99E1-1EB923220136}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmbracoNetCoreDockerExample.Core", "src\UmbracoNetCoreDockerExample.Core\UmbracoNetCoreDockerExample.Core.csproj", "{782C7B02-7227-47ED-99E1-1EB923220136}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{D1AD2045-F7C4-43F5-ADEC-203F08E0EEC9}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+		configs\ms.sql.env = configs\ms.sql.env
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
