@@ -2,9 +2,7 @@
 
 An example project with pre-configured Docker container to run and test the latest Umbraco build.
 
-<p align="center">
-  <img src="docs/img/umbraco-and-docker.png" alt="Umbraco + Docker" />
-</p>
+![](docs/img/umbraco-and-docker.png)
 
 ## Installation & Usage
 
@@ -17,15 +15,27 @@ SA_PASSWORD=examplepasswordtodb
 ACCEPT_EULA=Y
 ```
 
-3. Run the following command in the directory with _docker-compose.yml_ file:
+3. Run the following commands in the directory with _docker-compose.yml_:
+
+> Build and run all the configured services:
 
 ```cmd
 > docker-compose up -d
 ```
 
-4. After successfull build (it may take a while at the first time!), visit: _localhost:8080_ (default configuration).
+> Dedicated service composition (e.g. just Umbraco project named _umbraco-netcore_ in this demo):
 
-5. Configure the database on the created MSSQL server instance by connecting to it using e.g. SQL Management Studio. 
+```cmd
+> docker-compose up -d umbraco-netcore
+```
+
+6. Configure the database on the created MSSQL server instance by connecting to it using e.g. SQL Management Studio or Azure Data Studio.
+
+4. After successfull build (it may take a while at the first time!) and database creation, visit: _localhost:8080_ (default configuration) and continue with Umbraco installation (same as usual).
+
+## Known issues
+
+- Missing dictionary items / translations after starting the Docker container
 
 ## Resources:
 
