@@ -2,7 +2,7 @@
 
 An example project with pre-configured Docker container to run and test the latest Umbraco build.
 
-![](docs/img/umbraco-and-docker.png)
+![Umbraco + Docker = <3](docs/img/umbraco-and-docker.png)
 
 ## Installation & Usage
 
@@ -29,9 +29,15 @@ ACCEPT_EULA=Y
 > docker-compose up -d umbraco-netcore
 ```
 
-6. Configure the database on the created MSSQL server instance by connecting to it using e.g. SQL Management Studio or Azure Data Studio.
+4. Configure the database on the created MSSQL server instance by connecting to it using e.g. SQL Management Studio or Azure Data Studio.
 
-4. After successfull build (it may take a while at the first time!) and database creation, visit: _localhost:8080_ (default configuration) and continue with Umbraco installation (same as usual).
+5. After successfull build (it may take a while at the first time!) and database creation, visit: _localhost:8080_ (default configuration) and continue with Umbraco installation (same as usual).
+
+![Umbraco v9 Installation](docs/img/install-v9.png)
+
+6. The host has a changing IP address (or none if you have no network access). Use the special DNS name _host.docker.internal_ which resolves to the internal IP address used by the host. **This is for development purpose and will not work in a production environment outside of Docker Desktop for Windows.**
+
+![Umbraco DB Config on Docker](docs/img/docker-db-connection.png)
 
 ## Known issues
 
