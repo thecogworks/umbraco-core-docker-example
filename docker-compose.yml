@@ -15,11 +15,11 @@ services:
       - '3931:1434'
   
   umbraco-netcore:
+    restart: always
     links:
       - umbraco-db:umbraco-db
     depends_on:
       - umbraco-db
-    restart: always
     build:
       context: .
       dockerfile: Dockerfile
